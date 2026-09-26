@@ -1,0 +1,9 @@
+{
+    "training_state": "running",
+    "simulation_enabled": false,
+    "global_step": 9897,
+    "episode_id": 8,
+    "episode_step": 297,
+    "replay_size": 9339,
+    "saved_at": "2026-04-29T00:46:14"
+}

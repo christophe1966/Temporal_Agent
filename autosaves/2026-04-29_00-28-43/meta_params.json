@@ -1,0 +1,107 @@
+{
+    "experiment": {
+        "name": "temporal_agent_ppo_2d_v03_threaded_locomotion",
+        "seed": 42
+    },
+    "world": {
+        "width": 10.0,
+        "height": 10.0,
+        "dt": 0.08,
+        "bounce_damping": 0.88,
+        "max_speed": 3.2,
+        "max_steps_per_episode": 1200,
+        "spawn_margin": 1.0,
+        "friction": 0.996,
+        "max_accel": 1.6
+    },
+    "agent": {
+        "radius": 0.13,
+        "start_random": true,
+        "start_speed_min": 0.35,
+        "start_speed_max": 1.2
+    },
+    "motion_profile": {
+        "enabled": true,
+        "cycle_steps": 220,
+        "speed_base": 1.15,
+        "speed_amplitude": 0.95,
+        "speed_min": 0.35,
+        "speed_response": 2.4,
+        "randomize_phase_on_reset": true,
+        "real_noise_std": 0.0,
+        "speed_sigma": 0.45,
+        "accel_noise_std_train": 0.015,
+        "accel_noise_std_sim": 0.0
+    },
+    "predictor": {
+        "warmup_real_steps": 5,
+        "horizon_steps": 20,
+        "learning_rate": 0.001,
+        "batch_size": 128,
+        "replay_maxlen": 30000,
+        "min_replay_to_train": 512,
+        "train_batches_per_loop": 2,
+        "lstm_units": 64,
+        "dense_units": 128,
+        "future_steps": 50,
+        "prediction_noise_std": 0.0
+    },
+    "ui": {
+        "refresh_ms": 40,
+        "train_steps_per_loop": 8,
+        "sim_steps_per_tick": 3,
+        "trail_len": 600,
+        "display_real_steps": 100,
+        "graph_history_len": 1000,
+        "queue_max_messages_per_frame": 200,
+        "train_steps_per_tick": 5
+    },
+    "autosave": {
+        "enabled": true,
+        "every_minutes": 5,
+        "keep_last": 30
+    },
+    "reward": {
+        "speed_tracking_weight": 1.2,
+        "movement_weight": 0.2,
+        "straight_line_weight": 0.55,
+        "turn_penalty": 0.3,
+        "lateral_accel_penalty": 0.1,
+        "wall_hit_penalty": 1.25,
+        "wall_proximity_penalty": 0.1,
+        "wall_safety_margin": 0.55,
+        "energy_penalty": 0.004,
+        "jerk_penalty": 0.015,
+        "stuck_penalty": 0.05,
+        "min_useful_speed": 0.2,
+        "step_penalty": 0.001
+    },
+    "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate_actor": 0.0003,
+        "learning_rate_critic": 0.0003,
+        "clip_ratio": 0.2,
+        "entropy_coef": 0.01,
+        "value_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "rollout_steps": 512,
+        "ppo_epochs": 4,
+        "mini_batch_size": 128,
+        "action_std_init": 0.35,
+        "action_std_min": 0.06,
+        "action_std_decay": 0.9995,
+        "hidden_sizes": [
+            128,
+            128
+        ]
+    },
+    "temporal": {
+        "enabled": true,
+        "horizon_steps": 20,
+        "n_trajectories": 10,
+        "shared_prefix_steps": 5,
+        "trajectory_noise_std": 0.03,
+        "use_greedy_policy": true
+    }
+}

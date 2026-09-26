@@ -1,0 +1,5 @@
+{
+    "warmup_steps": 5,
+    "state_dim": 12,
+    "train_count": 1108
+}

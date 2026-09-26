@@ -1,0 +1,59 @@
+CARACTERISTIQUES DE LA MACHINE DE DEVELOPPEMENT
+=================================================
+
+Ce fichier décrit la machine utilisée pour développer ou tester les scripts.
+Il ne constitue pas une liste d'exigences minimales.
+Aucun nom d'utilisateur, nom de machine, numéro de série, adresse IP
+ou chemin personnel n'est publié.
+
+SYSTEME
+-------
+OS : Microsoft Windows 11 Famille
+Version : 10.0.26200
+Build : 26200
+Architecture : 64 bits
+
+PROCESSEUR ET MEMOIRE
+---------------------
+CPU : AMD Ryzen 7 8845HS w/ Radeon 780M Graphics
+Cœurs physiques : 8
+Processeurs logiques : 16
+Fréquence maximale annoncée : 3801 MHz
+Mémoire physique : 31.2 Gio
+
+CARTES GRAPHIQUES
+-----------------
+GPU 1 : NVIDIA GeForce RTX 4060 Laptop GPU
+  Mémoire vidéo annoncée : 4.0 Gio
+  Pilote : 32.0.15.9282
+  Rôle probable : GPU dédié ; accélération IA CUDA probable
+GPU 2 : AMD Radeon(TM) Graphics
+  Mémoire vidéo annoncée : 512.0 Mio
+  Pilote : 32.0.13040.2
+  Rôle probable : GPU graphique AMD ; rôle intégré ou dédié à confirmer
+
+ACCELERATION IA
+---------------
+nvidia-smi détecté : le pilote NVIDIA expose les GPU de calcul suivants :
+- NVIDIA GeForce RTX 4060 Laptop GPU | VRAM 8188 Mio | pilote 592.82
+CUDA est probablement exploitable, sous réserve d'une version compatible du framework Python.
+
+PYTHON
+------
+Interpréteur utilisé par cet outil : Python 3.13.5 (64bit)
+Versions Python détectées : 3.11, 3.13, 3.13.5
+Implémentation : CPython
+
+BIBLIOTHEQUES PYTHON UTILES DETECTEES
+------------------------------------
+- NumPy 2.1.3
+- SciPy 1.15.3
+- pandas 2.2.3
+- Matplotlib 3.10.0
+- scikit-learn 1.6.1
+- OpenCV 4.12.0.88
+
+REMARQUE POUR REPRODUIRE LE PROJET
+----------------------------------
+Les caractéristiques de cette machine ne remplacent pas un fichier requirements.txt.
+Chaque projet devrait indiquer ses bibliothèques obligatoires et leurs versions compatibles.
